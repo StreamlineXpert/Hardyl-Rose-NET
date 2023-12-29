@@ -3,6 +3,7 @@
 - name: create ansible user
   user:
     name: ansible
+    password: "2024"
     system: yes
 
 - name: copy sudoers_ansible
