@@ -3,6 +3,6 @@
   become: true
 
   tasks:
-  - name: Install git
+  - name: Update APT
     apt:
-      name: git
+      name: update
