@@ -11,7 +11,7 @@
     group: root
     mode: 0440
 
-- name: disable adminuser
-  user:
-    name: adminuser
-    state: absent
+#- name: disable adminuser
+#  user:
+#    name: adminuser
+#    state: absent
