@@ -1,0 +1,9 @@
+- name: Upgrade all packages
+  apt:
+    upgrade: dist
+
+- name: Install essential packages
+  apt:
+    name:
+      # Add more packages as needed
+    state: latest

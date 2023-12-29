@@ -2,9 +2,11 @@
   connection: localhost
   become: true
 
+  pre_tasks:
+    - name: Update package cache
+      apt:
+        update_cache: yes
+      changed_when: False
+
   tasks:
-  - name: Install packages
-    apt:
-      name:
-        - git
-        - ansible
+    - inclue: tasks/packages.yml
