@@ -14,4 +14,6 @@
     purge: yes
     name:
       - libreoffice*
+      - calculator*
+      - text editor*
     state: absent
