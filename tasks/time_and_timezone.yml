@@ -10,4 +10,9 @@
     state: present
 
 - name: Set system language to UK English
+  locale_gen:
+    name: "en_GB.UTF-8"
+    state: present
+
+- name: Update system locale
   command: update-locale LANG=en_GB.UTF-8
