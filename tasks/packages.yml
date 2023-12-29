@@ -21,4 +21,5 @@
       - cheese*
       - gnome-sudoku*
       - gnome-todo*
+      - thunderbird*
     state: absent
