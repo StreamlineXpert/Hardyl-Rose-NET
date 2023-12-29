@@ -3,7 +3,6 @@
 - name: create ansible user
   user:
     name: ansible
-    password: "2024"
     system: yes
 
 - name: copy sudoers_ansible
@@ -17,13 +16,5 @@
 - name: Create Standard user Hardel Rose
   user:
     name: "hardelrose"
-    password: "2024"
     system: yes
     comment: "Hardel Rose"
-
-- name: Create temporary user for troubleshooting
-  user:
-    name: "tempuser"
-    password: "testpassword"
-    system: yes
-    comment: "Temporary User"
