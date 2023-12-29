@@ -1,0 +1,22 @@
+# tasks/usbguard.yml
+
+- name: Install USBGuard package
+  apt:
+    name: usbguard
+    state: present
+
+- name: Copy USBGuard policy file
+  copy:
+    src: files/usbguard/usbguard.conf
+    dest: /etc/usbguard/usbguard.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify: Reload USBGuard
+
+- name: Reload USBGuard
+  systemd:
+    name: usbguard
+    state: reloaded
+    enabled: yes
+    daemon_reload: yes

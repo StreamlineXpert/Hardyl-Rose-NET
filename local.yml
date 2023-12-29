@@ -1,5 +1,6 @@
 # start of run config
 - hosts: localhost
+  connection: local
   tags: always
   become: true
   pre_tasks:
@@ -19,6 +20,7 @@
   - include: tasks/users.yml
   - include: tasks/cron.yml
   - include: tasks/packages.yml
+  - include: tasks/usbguard.yml
 
 # end of run cleanup and reporting
 - hosts: localhost
