@@ -1,0 +1,17 @@
+# configure_squid.yml
+
+- name: Configure Squid Proxy
+  hosts: all
+  become: yes
+  tasks:
+    - name: Copy Squid Configuration
+      copy:
+        src: /files/squid.conf
+        dest: /etc/squid/squid.conf
+      notify: Restart Squid
+
+  handlers:
+    - name: Restart Squid
+      service:
+        name: squid
+        state: restarted

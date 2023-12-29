@@ -3,7 +3,7 @@
 - name: Install packages
   apt:
     name:
-      # List of your packages here
+      - squid
     state: latest
 
 - name: Remove packages
