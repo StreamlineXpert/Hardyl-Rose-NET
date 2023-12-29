@@ -1,11 +1,9 @@
-- name: Upgrade all packages
-  apt:
-    upgrade: dist
+# packages.yml
 
 - name: Install packages
   apt:
     name:
-    #  - libreoffice
+      # List of your packages here
     state: latest
 
 - name: Remove packages
@@ -13,5 +11,5 @@
     autoremove: yes
     purge: yes
     name:
-      - libreoffice*
+      # List of packages to remove
     state: absent
