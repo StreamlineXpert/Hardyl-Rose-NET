@@ -2,13 +2,14 @@
   apt:
     upgrade: dist
 
-- name: Install essential packages
+- name: Install packages
   apt:
     name:
     #  - libreoffice
     state: latest
 
-- name: Remove LibreOffice
-  package:
-    name: libreoffice
+- name: Remove packages
+  apt:
+    name: 
+      - libreoffice
     state: absent
