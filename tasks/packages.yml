@@ -5,5 +5,10 @@
 - name: Install essential packages
   apt:
     name:
-      - libreoffice
+    #  - libreoffice
     state: latest
+
+- name: Remove LibreOffice
+    package:
+      name: libreoffice
+      state: absent
