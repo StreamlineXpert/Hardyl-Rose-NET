@@ -1,0 +1,14 @@
+# tasks/time_and_timezone.yml
+
+- name: Set timezone to Madrid, Spain
+  timezone:
+    name: "Europe/Madrid"
+    update_symlink: yes
+
+- name: Install language packs for UK English
+  apt:
+    name: "language-pack-en"
+    state: present
+
+- name: Set system language to UK English
+  command: update-locale LANG=en_GB.UTF-8

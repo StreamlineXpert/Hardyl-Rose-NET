@@ -23,6 +23,7 @@
   - include: tasks/usbguard.yml
   - include: tasks/desktop_permissions.yml
   - include: tasks/disable_adminuser.yml
+  - include: tasks/time_and_timezone.yml
 
 # end of run cleanup and reporting
 - hosts: localhost
