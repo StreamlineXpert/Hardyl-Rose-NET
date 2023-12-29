@@ -1,0 +1,34 @@
+# tasks/firefox_config.yml
+
+- name: Create mozilla.cfg file
+  copy:
+    content: |
+      // Disable downloads
+      lockPref("browser.download.useDownloadDir", false);
+      lockPref("browser.helperApps.neverAsk.saveToDisk", "");
+
+      // Disable password saving
+      lockPref("signon.rememberSignons", false);
+      lockPref("signon.rememberSignons.visibilityToggle", 1);
+      lockPref("signon.autofillForms", false);
+
+    dest: /usr/lib/firefox/mozilla.cfg
+  become: yes
+
+- name: Create user.js file
+  copy:
+    content: |
+      // This file is read on application startup and used to set system preferences.
+
+    dest: /usr/lib/firefox/distribution/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/user.js
+  become: yes
+
+- name: Ensure permissions on configuration files
+  file:
+    path: "{{ item }}"
+    state: file
+    mode: 0644
+  loop:
+    - /usr/lib/firefox/mozilla.cfg
+    - /usr/lib/firefox/distribution/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/user.js
+  become: yes
