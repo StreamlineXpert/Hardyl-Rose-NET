@@ -11,5 +11,5 @@
     autoremove: yes
     purge: yes
     name:
-      # List of packages to remove
+      - libreoffice*
     state: absent
