@@ -12,11 +12,11 @@
     owner: root
     group: root
     mode: 0644
-  notify: Reload USBGuard
+  notify: Restart USBGuard
 
-- name: Reload USBGuard
+- name: Restart USBGuard
   systemd:
     name: usbguard
-    state: reloaded
+    state: restarted
     enabled: yes
     daemon_reload: yes
