@@ -15,6 +15,6 @@
 
 - name: Create Standard user Hardel Rose
   user:
-    name: "hardelrose"
+    name: "hardylrose"
     system: yes
-    comment: "Hardel Rose"
+    comment: "Hardyl Rose"
