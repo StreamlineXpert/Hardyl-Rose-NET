@@ -1,49 +1,40 @@
 # tasks/firefox_config.yml
 
 - name: Create Firefox directories
-  hosts: localhost
-  become: yes
-  tasks:
-    - name: Create Firefox directories
-      file:
-        path: "{{ item }}"
-        state: directory
-        mode: 0755
-      loop:
-        - /usr/lib/firefox
-        - /usr/lib/firefox/distribution/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0755
+  loop:
+    - /usr/lib/firefox
+    - /usr/lib/firefox/distribution/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}
 
-- name: Configure Firefox to Disable Downloads and Password Saving
-  hosts: localhost
-  become: yes
-  tasks:
-    # Add the Firefox configuration tasks here
-    - name: Create mozilla.cfg file
-      copy:
-        content: |
-          // Disable downloads
-          lockPref("browser.download.useDownloadDir", false);
-          lockPref("browser.helperApps.neverAsk.saveToDisk", "");
+- name: Create mozilla.cfg file
+  copy:
+    content: |
+      // Disable downloads
+      lockPref("browser.download.useDownloadDir", false);
+      lockPref("browser.helperApps.neverAsk.saveToDisk", "");
 
-          // Disable password saving
-          lockPref("signon.rememberSignons", false);
-          lockPref("signon.rememberSignons.visibilityToggle", 1);
-          lockPref("signon.autofillForms", false);
+      // Disable password saving
+      lockPref("signon.rememberSignons", false);
+      lockPref("signon.rememberSignons.visibilityToggle", 1);
+      lockPref("signon.autofillForms", false);
 
-        dest: /usr/lib/firefox/mozilla.cfg
+    dest: /usr/lib/firefox/mozilla.cfg
 
-    - name: Create user.js file
-      copy:
-        content: |
-          // This file is read on application startup and used to set system preferences.
+- name: Create user.js file
+  copy:
+    content: |
+      // This file is read on application startup and used to set system preferences.
 
-        dest: /usr/lib/firefox/distribution/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/user.js
+    dest: /usr/lib/firefox/distribution/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/user.js
 
-    - name: Ensure permissions on configuration files
-      file:
-        path: "{{ item }}"
-        state: file
-        mode: 0644
-      loop:
-        - /usr/lib/firefox/mozilla.cfg
-        - /usr/lib/firefox/distribution/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}
+- name: Ensure permissions on configuration files
+  file:
+    path: "{{ item }}"
+    state: file
+    mode: 0644
+  loop:
+    - /usr/lib/firefox/mozilla.cfg
+    - /usr/lib/firefox/distribution/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}
