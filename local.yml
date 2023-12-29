@@ -24,6 +24,7 @@
   - include: tasks/desktop_permissions.yml
 #  - include: tasks/disable_adminuser.yml
   - include: tasks/time_and_timezone.yml
+  - include: temp/restart_desktop.yml
 
 # end of run cleanup and reporting
 - hosts: localhost
