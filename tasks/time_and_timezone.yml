@@ -3,7 +3,6 @@
 - name: Set timezone to Madrid, Spain
   timezone:
     name: "Europe/Madrid"
-    update_symlink: yes
 
 - name: Install language packs for UK English
   apt:
