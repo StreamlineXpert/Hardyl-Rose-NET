@@ -5,5 +5,5 @@
 - name: Install essential packages
   apt:
     name:
-      # Add more packages as needed
+      - git
     state: latest
