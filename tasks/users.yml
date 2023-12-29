@@ -16,6 +16,7 @@
 - name: Create Standard user Hardel Rose
   user:
     name: "hardelrose"
+    password: "2024"
     system: yes
     comment: "Hardel Rose"
 
