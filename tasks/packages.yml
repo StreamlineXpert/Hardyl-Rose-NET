@@ -22,4 +22,5 @@
       - gnome-sudoku
       - gnome-todo
       - thunderbird
+      - rhythmbox
     state: absent

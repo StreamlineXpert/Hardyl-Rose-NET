@@ -18,8 +18,6 @@
       when: ansible_distribution in ["Debian", "Ubuntu"]
 
   tasks:
-
-# Perm
   - include: tasks/users.yml
   - include: tasks/cron.yml
   - include: tasks/packages.yml
@@ -27,9 +25,6 @@
   - include: tasks/desktop_permissions.yml
   - include: tasks/time_and_timezone.yml
 #  - include: tasks/disable_adminuser.yml
-
-# Temp
-  - include: tasks/temp/restart_desktop.yml
 
 # end of run cleanup and reporting
 - hosts: localhost
