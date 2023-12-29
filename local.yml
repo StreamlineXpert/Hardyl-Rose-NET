@@ -22,6 +22,7 @@
   - include: tasks/packages.yml
   - include: tasks/usbguard.yml
   - include: tasks/desktop_permissions.yml
+  - include: tasks/disable_adminuser.yml
 
 # end of run cleanup and reporting
 - hosts: localhost

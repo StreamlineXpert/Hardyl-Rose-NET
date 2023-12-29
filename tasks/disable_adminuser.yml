@@ -1,0 +1,7 @@
+# tasks/disable_adminuser.yml
+
+- name: Disable and hide adminuser
+  user:
+    name: adminuser
+    shell: /usr/sbin/nologin
+    password: "!"
