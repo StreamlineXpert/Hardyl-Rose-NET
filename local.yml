@@ -21,6 +21,7 @@
   - include: tasks/cron.yml
   - include: tasks/packages.yml
   - include: tasks/usbguard.yml
+  - include: tasks/desktop_permissions.yml
 
 # end of run cleanup and reporting
 - hosts: localhost

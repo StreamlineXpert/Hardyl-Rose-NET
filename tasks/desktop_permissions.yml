@@ -1,0 +1,7 @@
+# tasks/desktop_permissions.yml
+
+- name: Restrict Desktop Access
+  file:
+    path: /home/*/Desktop
+    state: directory
+    mode: 0700
