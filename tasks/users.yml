@@ -1,3 +1,5 @@
+# tasks/users.yml
+
 - name: create ansible user
   user:
     name: ansible
@@ -11,8 +13,9 @@
     group: root
     mode: 0440
 
-- name: create Standard user
+- name: Create Standard user Hardel Rose
   user:
-    name: Hardel Rose
+    name: "hardelrose"
     system: yes
     password: "!"
+    comment: "Hardel Rose"
