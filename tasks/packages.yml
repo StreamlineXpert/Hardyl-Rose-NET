@@ -12,14 +12,14 @@
     purge: yes
     name:
       - libreoffice*
-      - aisleriot*
-      - gnome-solitaire*
-      - gnome-mahjongg*
-      - gnome-mines*
-      - remmina*
-      - shotwell*
-      - cheese*
-      - gnome-sudoku*
-      - gnome-todo*
-      - thunderbird*
+      - aisleriot
+      - gnome-solitaire
+      - gnome-mahjongg
+      - gnome-mines
+      - remmina
+      - shotwell
+      - cheese
+      - gnome-sudoku
+      - gnome-todo
+      - thunderbird
     state: absent
