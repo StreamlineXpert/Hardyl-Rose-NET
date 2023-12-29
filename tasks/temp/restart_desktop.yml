@@ -1,6 +1,7 @@
 # temp/restart_desktop.yml
 
 - name: Restart GNOME Desktop
-  command: "dbus-send --session --type=method_call --dest=org.gnome.Shell /org/gnome/Shell org.gnome.Shell.Eval string:'Main.quit();'"
+  ansible.builtin.shell:
+    cmd: "dbus-send --session --type=method_call --dest=org.gnome.Shell /org/gnome/Shell org.gnome.Shell.Eval string:'Main.quit();'"
   become: yes
   become_user: ansible
