@@ -9,6 +9,6 @@
     state: latest
 
 - name: Remove LibreOffice
-    package:
-      name: libreoffice
-      state: absent
+  package:
+    name: libreoffice
+    state: absent
