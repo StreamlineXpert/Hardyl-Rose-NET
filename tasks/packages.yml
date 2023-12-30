@@ -3,7 +3,7 @@
 - name: Install packages
   apt:
     name:
-      - libreoffices
+    #  -
     state: latest
 
 - name: Remove packages
