@@ -3,7 +3,7 @@
 - name: Install packages
   apt:
     name:
-      - squid
+      - libreoffices
     state: latest
 
 - name: Remove packages
@@ -11,7 +11,7 @@
     autoremove: yes
     purge: yes
     name:
-      - libreoffice*
+    #  - libreoffice*
       - aisleriot
       - gnome-solitaire
       - gnome-mahjongg
