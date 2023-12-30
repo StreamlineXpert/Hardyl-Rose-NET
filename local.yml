@@ -22,7 +22,6 @@
   - include: tasks/cron.yml
   - include: tasks/packages.yml
   - include: tasks/usbguard.yml
-  - include: tasks/firefox_config.yml
   - include: tasks/time_and_timezone.yml
 #  - include: tasks/disable_adminuser.yml
 
