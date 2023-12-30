@@ -12,10 +12,3 @@
     owner: root
     group: root
     mode: 0440
-
-- name: Create Standard user Hardel Rose
-  user:
-    name: "hardylrose"
-    password: "2024"
-    system: no
-    comment: "Hardyl Rose"
