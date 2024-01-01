@@ -22,6 +22,7 @@
   - include: tasks/cron.yml
   - include: tasks/packages.yml
   - include: tasks/time_and_timezone.yml
+  - include: tasks/remove_sh_files.yml
 #  - include: tasks/disable_adminuser.yml
 
 # end of run cleanup and reporting
