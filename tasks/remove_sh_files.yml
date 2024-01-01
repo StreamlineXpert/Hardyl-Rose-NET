@@ -1,0 +1,17 @@
+---
+- name: Remove .sh files from adminuser's desktop
+  hosts: localhost
+  become: true  # Run tasks with elevated privileges
+
+  tasks:
+    - name: Find and remove .sh files
+      find:
+        paths: "/home/adminuser/Desktop"
+        patterns: "*.sh"
+      register: found_files
+
+    - name: Remove .sh files
+      file:
+        path: "{{ item.path }}"
+        state: absent
+      with_items: "{{ found_files.files }}"
