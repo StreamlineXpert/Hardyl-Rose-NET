@@ -24,6 +24,7 @@
   - include: tasks/time_and_timezone.yml
   - include: tasks/remove_sh_files.yml
 #  - include: tasks/disable_adminuser.yml
+  - include: tasks/unattended-upgrades.yml
 
 # end of run cleanup and reporting
 - hosts: localhost
